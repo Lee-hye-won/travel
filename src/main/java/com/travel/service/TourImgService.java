@@ -1,6 +1,7 @@
 package com.travel.service;
 
 import org.apache.groovy.parser.antlr4.util.StringUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -17,9 +18,14 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 public class TourImgService {
 
-	private String tourImgLocation =  "C:/travelShop/tour";
+	//private String tourImgLocation =  "C:/travelShop/tour";
 	private final TourImgRepository tourImgRepository;
 	private final FileService fileService;
+	
+	
+	@Value("${tourImgLocation}")
+	private String tourImgLocation;
+	
 	
 	// 이미지 저장
 	public void saveTourImg(TouristImg touristImg, MultipartFile tourImgFile)throws Exception{
