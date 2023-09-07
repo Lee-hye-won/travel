@@ -156,7 +156,7 @@ public class KakaoPayController {
 
 	        
 	        
-	        return "/item/paySuccess";
+	        return "item/paySuccess";
 	}
 	
 	

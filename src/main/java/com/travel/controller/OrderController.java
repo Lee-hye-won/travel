@@ -96,7 +96,7 @@ public class OrderController {
         model.addAttribute("selectedItems", selectedItems);
         model.addAttribute("totalPrice", totalPrice);
 
-        return "/item/address";
+        return "item/address";
 	}
 	
 	
@@ -105,7 +105,7 @@ public class OrderController {
 	@GetMapping(value = "/order/success/{payId}")
 	public String orderSuccess() {
 		
-		return "/item/orderInfo";
+		return "item/orderInfo";
 	}
 	
 	
@@ -119,7 +119,7 @@ public class OrderController {
 		model.addAttribute("maxPage", 5);
 		model.addAttribute("page", pageable.getPageNumber());
 		
-		return "/item/orderHist";
+		return "item/orderHist";
 	}
 
 	

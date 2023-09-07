@@ -149,13 +149,13 @@ public class AdminController {
 		String email = members.getEmail();
 		
 		if (bindingResult.hasErrors()) {
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		// 상품등록전에 첫번째 이미지가 있는지 없는지 검사.(첫번째 이미지는 필수입력값)
 		if (itemImgFileList.get(0).isEmpty()) {
 			model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수입니다.");
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		try {
@@ -163,7 +163,7 @@ public class AdminController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("errorMessage", "상품 등록 중 에러가 발생했습니다.");
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		return "redirect:/";
@@ -249,7 +249,7 @@ public class AdminController {
 			model.addAttribute("infoSearchDto", infoSearchDto);
 			model.addAttribute("maxPage", 5); // 상품관리페이지 하단에 보여줄 최대 페이지 번호
 
-			return "/admin/infoList";
+			return "admin/infoList";
 
 		}
 	
@@ -372,7 +372,7 @@ public class AdminController {
 		model.addAttribute("tourSearchDto", tourSearchDto);
 		model.addAttribute("maxPage", 5); //상품관리페이지 하단에 보여줄 최대 페이지 번호
 		
-		return "/admin/tourList";
+		return "admin/tourList";
 	}
 	
 	
@@ -381,7 +381,7 @@ public class AdminController {
 	@GetMapping(value = "/adminTour/new")
 	public String adminTour(Model model) {
 		model.addAttribute("tourFormDto", new TourFormDto());
-		return "/admin/tourRegist";
+		return "admin/tourRegist";
 	}
 	
 	// 추천관광지 등록

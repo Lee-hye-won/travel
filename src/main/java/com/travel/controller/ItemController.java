@@ -34,7 +34,7 @@ public class ItemController {
 		model.addAttribute("maxPage", 5);
 		
 		
-		return "/item/itemShopList";
+		return "item/itemShopList";
 	}
 	
 	//상품 상세보기
@@ -43,7 +43,7 @@ public class ItemController {
 		ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
 		model.addAttribute("item", itemFormDto);
 		
-		return "/item/itemDtl";
+		return "item/itemDtl";
 	}
 	
 }

@@ -66,7 +66,7 @@ public class CartController {
 		model.addAttribute("maxPage", 5);
 		model.addAttribute("page", pageable.getPageNumber());
 		
-		return "/item/cart";
+		return "item/cart";
 	}
 	
 	//카트 상품 삭제하기
