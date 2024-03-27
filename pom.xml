@@ -77,6 +77,13 @@
 			<version>5.0.0</version>
 			<classifier>jakarta</classifier>
 		</dependency>
+      <dependency>
+         <groupId>com.querydsl</groupId>
+         <artifactId>querydsl-core</artifactId>
+          <version>4.3.1</version>
+          <!-- <classifier>jakarta</classifier> -->
+      </dependency>
+
 		<!--
 		https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
 		<dependency>
