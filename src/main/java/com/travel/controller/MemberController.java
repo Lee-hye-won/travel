@@ -174,11 +174,8 @@ public class MemberController {
 		String memberId = principalDetail.getEmail();
 		
 		
-		
 		List<Plan> plans = planService.findPlanTopByEmail(memberId);
 		
-		
-
 		
 		List<PlanCommunity> planCommunity = communityService.getTop3RecentCommunitiesByMemberEmail(memberId);
 		

@@ -1,11 +1,8 @@
  package com.travel.controller;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.nimbusds.oauth2.sdk.Role;
 import com.travel.Dto.AskFormDto;
 import com.travel.Dto.AskResponseFormDto;
 import com.travel.Dto.AskSearchDto;
@@ -13,7 +10,6 @@ import com.travel.Dto.InfoFormDto;
 import com.travel.Dto.InfoSearchDto;
 import com.travel.Dto.ItemFormDto;
 import com.travel.Dto.ItemSearchDto;
-import com.travel.Dto.MainAskDto;
 import com.travel.Dto.MemberFormDto;
 import com.travel.Dto.TourFormDto;
 import com.travel.Dto.TourSearchDto;
@@ -39,7 +35,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.travel.Dto.MemberFormDto;
 
 import com.travel.entity.Member;
 import com.travel.entity.Tourist;
