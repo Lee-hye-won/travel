@@ -1,11 +1,8 @@
  package com.travel.controller;
 
-import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import com.nimbusds.oauth2.sdk.Role;
 import com.travel.Dto.AskFormDto;
 import com.travel.Dto.AskResponseFormDto;
 import com.travel.Dto.AskSearchDto;
@@ -13,7 +10,6 @@ import com.travel.Dto.InfoFormDto;
 import com.travel.Dto.InfoSearchDto;
 import com.travel.Dto.ItemFormDto;
 import com.travel.Dto.ItemSearchDto;
-import com.travel.Dto.MainAskDto;
 import com.travel.Dto.MemberFormDto;
 import com.travel.Dto.TourFormDto;
 import com.travel.Dto.TourSearchDto;
@@ -39,7 +35,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.travel.Dto.MemberFormDto;
 
 import com.travel.entity.Member;
 import com.travel.entity.Tourist;
@@ -149,13 +144,13 @@ public class AdminController {
 		String email = members.getEmail();
 		
 		if (bindingResult.hasErrors()) {
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		// 상품등록전에 첫번째 이미지가 있는지 없는지 검사.(첫번째 이미지는 필수입력값)
 		if (itemImgFileList.get(0).isEmpty()) {
 			model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수입니다.");
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		try {
@@ -163,7 +158,7 @@ public class AdminController {
 		} catch (Exception e) {
 			e.printStackTrace();
 			model.addAttribute("errorMessage", "상품 등록 중 에러가 발생했습니다.");
-			return "/admin/itemRegist";
+			return "admin/itemRegist";
 		}
 
 		return "redirect:/";

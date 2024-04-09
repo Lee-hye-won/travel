@@ -28,11 +28,11 @@ public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cart_id")
+    @Column(name = "cart_id" )
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
+    @JoinColumn(name = "member_id" , unique = false)
     private Member member;
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)

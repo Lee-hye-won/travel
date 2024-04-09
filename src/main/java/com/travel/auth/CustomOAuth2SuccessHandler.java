@@ -37,7 +37,7 @@ public class CustomOAuth2SuccessHandler implements AuthenticationSuccessHandler 
     	Member findMember = memberRepository.findByEmail(member.getEmail());
     	
         if (findMember == null) {
-            return "/oauth2/code/kakao";
+            return "oauth2/code/kakao";
         } else {
             return "/";
         }
