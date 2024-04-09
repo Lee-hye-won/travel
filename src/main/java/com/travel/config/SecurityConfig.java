@@ -82,7 +82,7 @@ public class SecurityConfig {
 				.userInfoUri("https://kapi.kakao.com/v2/user/me")
 				.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_POST) // 여기에서 인증 방식을 설정
 				.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
-				.redirectUri("http://localhost/login/oauth2/code/kakao").userNameAttributeName("id").clientName("Kakao")
+				.redirectUri("http://ec2-43-200-178-19.ap-northeast-2.compute.amazonaws.com/login/oauth2/code/kakao").userNameAttributeName("id").clientName("Kakao")
 				.build();
 
 		return new InMemoryClientRegistrationRepository(kakaoClientRegistration);
